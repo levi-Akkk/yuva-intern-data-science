@@ -38,22 +38,22 @@ This project predicts housing prices in Gurgaon using machine learning. It featu
 ## Week 5 - Deep Learning
 Project: MNIST Handwritten Digit Classification
 This project uses TensorFlow/Keras to build a neural network that classifies handwritten digits from 0 to 9 using the MNIST dataset.
-# Dataset
+**Dataset**
 60,000 training images
 10,000 testing images
 Image size: 28 × 28 grayscale
 10 classes (digits 0–9)
-# Model
+**Model**
 A simple Fully Connected Neural Network was used:
 Flatten layer
 Dense layer: 128 neurons, ReLU activation
 Output layer: 10 neurons, Softmax activation
-# Training
+**Training**
 Optimizer: Adam
 Loss: Categorical Cross-Entropy
 Epochs: 5
 Batch Size: 32
-# Ressult
+**Result**
 Training Accuracy: 91.10%
 Test Accuracy: 91.46%
 Test Loss: 0.2970
