@@ -58,4 +58,38 @@ Training Accuracy: 91.10%
 Test Accuracy: 91.46%
 Test Loss: 0.2970
 
+# Diabetes Prediction & Patient Risk Clustering
+
+An end-to-end data science pipeline built on the Pima Indians Diabetes dataset — combining supervised classification and unsupervised clustering to predict diabetes risk and uncover natural patient risk groups.
+
+## Overview
+
+This project predicts whether a patient has diabetes from routine clinical measurements (glucose, BMI, blood pressure, insulin, etc.), and separately explores whether patients naturally group into risk clusters based on those same measurements alone, without using the diagnosis label.
+
+- **Dataset:** [Pima Indians Diabetes Database](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database) — 768 patients, 8 clinical features
+- **Supervised models:** Logistic Regression (baseline), Random Forest (tuned with GridSearchCV + 5-fold cross-validation)
+- **Unsupervised model:** K-Means clustering (k = 2), visualized with PCA
+- **Tools:** Python, pandas, scikit-learn, seaborn, matplotlib
+
+## Results
+
+| Model | Test Accuracy | ROC-AUC |
+|---|---|---|
+| Logistic Regression (baseline) | 70.78% | — |
+| Random Forest (tuned) | 86.36% | 0.9437 |
+| Random Forest + engineered features + cross-validation | **87.01%** | **0.9515** |
+
+- 5-fold cross-validation mean accuracy: 88.11% (± 1.68%)
+- K-Means clustering silhouette score: 0.20, with clusters aligning meaningfully to actual diagnosis (61% diabetic in the high-risk cluster vs. 13% in the low-risk cluster)
+
+## Pipeline
+
+1. **Data cleaning** — corrected hidden missing values (biologically impossible zeros in glucose, blood pressure, skin thickness, insulin, and BMI) via median imputation
+2. **Exploratory data analysis** — class balance, feature distributions by outcome, correlation analysis
+3. **Feature engineering** — glucose-to-insulin ratio, BMI category, age group
+4. **Supervised modeling** — baseline and tuned classifiers, evaluated with accuracy, ROC-AUC, precision/recall
+5. **Unsupervised modeling** — K-Means clustering with elbow-method selection and PCA visualization
+6. **Evaluation & insights** — confusion matrix, feature importance, cluster-to-diagnosis comparison.
+
+
 
