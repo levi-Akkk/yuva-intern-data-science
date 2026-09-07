@@ -58,7 +58,7 @@ Training Accuracy: 91.10%
 Test Accuracy: 91.46%
 Test Loss: 0.2970
 
-# Diabetes Prediction & Patient Risk Clustering
+# Week 6- Diabetes Prediction & Patient Risk Clustering
 
 An end-to-end data science pipeline built on the Pima Indians Diabetes dataset — combining supervised classification and unsupervised clustering to predict diabetes risk and uncover natural patient risk groups.
 
